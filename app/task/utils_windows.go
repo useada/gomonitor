@@ -6,7 +6,6 @@ import (
 	"bufio"
 	"context"
 	"fmt"
-	"gomonitor/config"
 	"gomonitor/utils"
 	"io"
 	"os/exec"
@@ -44,7 +43,7 @@ func Command(cmd string, exeid string) error {
 			}
 			byte2String :=utils.ConvertByte2String(readString, "GB18030")
 			fmt.Print(byte2String)
-			config.Gconfig.GLoger.InfoLog(byte2String,exeid+"_")
+			//config.Gconfig.GLoger.InfoLog(byte2String,exeid+"_")
 		}
 	}()
 	go func() {
@@ -56,7 +55,7 @@ func Command(cmd string, exeid string) error {
 			}
 			byte2String := utils.ConvertByte2String(readString, "GB18030")
 			fmt.Print(byte2String)
-			config.Gconfig.GLoger.InfoLog(byte2String,exeid+"_")
+			//config.Gconfig.GLoger.InfoLog(byte2String,exeid+"_")
 		}
 	}()
 	err = c.Start()

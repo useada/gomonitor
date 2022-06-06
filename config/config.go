@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
-	"github.com/zarte/zloger"
+	//"github.com/zarte/zloger"
 )
 
 var Gconfig = new(Sysconfig)
@@ -13,7 +13,7 @@ type Sysconfig struct {
 	CurExePath string
 	WebPort string
 	ExeList *sync.Map
-	GLoger *zloger.Loger
+	//GLoger *zloger.Loger
 	SecretKey string
 	Expire int
 }
@@ -24,7 +24,7 @@ func SetConfig() {
 	}else{
 		Gconfig.CurExePath =  dir+"/"
 	}
-	Gconfig.GLoger = zloger.NewLog(Gconfig.CurExePath +"logs")
+	//Gconfig.GLoger = zloger.NewLog(Gconfig.CurExePath +"logs")
 
 	Gconfig.WebPort = "5556"
 	Gconfig.ChanList = new (sync.Map)
